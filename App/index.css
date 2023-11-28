@@ -1,120 +1,174 @@
-*{
-  margin: 0;
-  padding: 0;
+*,
+::before,
+::after {
   box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
 }
 
 body{
-  font-family: 'Lato', sans-serif;
+  margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    background:linear-gradient(#42c096,#116b54);
 }
-.app-container {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #7e22ce, #10b981);
-  padding: 0.70rem;
+h2{
+  text-align: center;
+  color: #083344;
 }
-
-.title-app {
-width: 100%;
-max-width: 540px;
-background: #c084fc;
-margin: 100px auto 20px;
-padding: 40px 10px 70px;
-border-radius: 10px
-
-
-}
-
-.title-app h2 {
-  color: #3b0764;
+.container {
+  width:100%;
+  background-color: #d6f5e6;
+  border-width: 3px;
+  border-color: #072721;
+  margin: 1rem 0 ;
+  padding: 0.5rem ;
+  border-radius: 1rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
+  flex-direction: column;
+  color:white;
+  font-weight: 700;
+
   
 }
-
-.row {
+.list-container{
+  
+  width: 100%;
+  border-radius: 1rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  background-color: #edeef0;
-   border-radius: 2rem;
-   padding-left: 20px;
-   margin-bottom: 25px;
-   
-
+  flex-direction: column;
+  background-color:#d6f5e6;
+  border-width: 3px;
+  border-color: #072721;
+  overflow: auto;
 }
-
-.task{
-  position: relative;
-  display: flex;
-  align-items: center;
-  border-radius: 1.75rem;
-  background: #083344;
-  margin: 1rem 3rem;
-  padding: 0.75rem;
-  min-height: 1.75rem;
-  cursor: pointer;
-  color: white;
- width: 75%;
-}
-
-
 
 input {
   flex: 1;
   border: none;
   outline: none;
-  background: transparent;
-  padding: 10px;
-  font-weight: 14px;
+  background: #7cd9b7;
+  padding: 0.5rem;
+  font-weight: 1rem;
+  border-radius: 0.5rem;
+  width: 75%;
 
 }
-
-#add{
-  border: none;
-  outline: none;
-  padding: 1rem 50px;
-  background: #701a75;
+.add-btn{
+  padding: 0.5rem;
+  background: #116b54;
   color: #fff;
   cursor: pointer;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.175s ease-in;
+}
+.add-btn:hover{
+  background-color: #11483a;
+  transition: all 0.175s ease-in; 
+  transform: scale(1.1);
+}
+#list{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: auto;
 
 }
-
-ul li {
-list-style: none;
-font-size: 1rem;
-padding: 12px 8px 12px 50px;
-user-select: none;
-cursor: pointer;
-
-
-
-}
- ul {
+.task{
+  background-color: #072721;
+  width: 100%;
+  margin: 0.5rem 0;
+  border-radius: 0.3rem;
+  color: white;
+  list-style:none;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
- }
-
- #contador {
-
+  align-items: center; 
+ justify-content: space-between;
+}
+.delete-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: #c80d0d;
+  color: white;
+  transition: all 0.175s ease-in;
+}
+.delete-btn:hover{
+  transition: all 0.175s ease-in;
+  background-color: white;
+  color: #ff2727;
+  
+}
+.check-btn{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;   
+  background-color: #0e6d32;
+  color: white;
+}
+.check-btn:hover{
+  background-color:white;
+  color: #08b146;
+  transition: all 0.175s ease-in;
+  
+}
+.data{
+  margin: 0;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  
-  
- }
-
- .btn-cont {
-
-  border: none;
-  outline: none;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  background-color: #f43f5e;
+}
+.counter-box {
+  margin: 0.2rem;
+  background-color: #116b54;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
   color: white;
- }
+  font-weight:500;
+}
+.complete{
+  text-decoration:line-through;
+  color: green;
+}
+.list-text{
+  text-align: center; 
+  color: #013215;
+  font-weight: 700; 
+}
+.invalid:focus, .invalid{
+  border: 2px solid rgb(246, 32, 32);
+}
+
+@media (min-width: 768px) {
+  body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+  }
+  .container{
+      width: 50%;
+  }
+ 
+  .list-container{
+      width: 50%;
+      overflow: auto;
+  }
+ 
+}
+
+@media (min-width: 1024px){
+  
+
+}
+

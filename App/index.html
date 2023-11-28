@@ -4,34 +4,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TodoApp</title>
-  <link rel="stylesheet" href="index.css">
+  <title>Todo app</title>
 </head>
 <body>
-  <div class="app-container">
-    <div class="title-app">
-      <h2>TodoApp</h2>
-      <div class="row">
-        <input type="text" id="input-box " placeholder="Nueva Tarea...">
-      <button id="add">Crear</button>
-      </div>
-      <ul id="list-container">
-        <li class="task">Tarea 1</li>
-        <li class="task">Tarea 2</li>
-        <li class="task">Tarea 3</li>
-        
-      </ul>
+  <div class="container">
+    <h2>TodoApp</h2>
+    <div class="form-container">
 
-      <ul id="contador">
-        <li><button class="btn-cont">Total:3</button></li>
-        <li><button class="btn-cont">Completadas:1</button></li>
-        <li><button class="btn-cont">Incompletas:2</button></li>
-      </ul>
+      <form id="form" class="form">
+        <input id="input-task" type="text" placeholder="Nueva Tarea..." autocomplete="off">
+        <button class="add-btn" >Crear</button>
+      </form>
 
-      
     </div>
+
   </div>
+
+  <div class="list-container">
+     <ul id="list">
+      
+     </ul>
+     <div class="data">
+       <p class="counter-box" id="total">Total: 0</p>
+       <p class="counter-box" id="complete"> Completadas: 0</p>
+       <p class="counter-box" id="incomplete">Incompletas: 0</p>
+     </div>
+  </div>
+
+
+  <script src="app.js"></script>
 </body>
-</html>
+</html> 
